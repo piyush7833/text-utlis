@@ -47,23 +47,16 @@ function App() {
       <BrowserRouter>
         <Navbar title="Text-Utils" about="About us" mode={Mode} toggleMode={toggleMode} /> {/* passing props  //props are read only */}
         <Alerts alert={alert} />
-        {/* <div className="container">
-          <Routes>
-            <Route path="/about">
-              <About mode={Mode} />
-            </Route>
-            <Route path="/">
-              <TextForm heading="Enter your text to modify" example="Enter your text here" mode={Mode} showAlert={showAlert} />
-            </Route>
-          </Routes>
-        </div> */}
-
+        <div className="container">
         <Routes>
-          <Route path="/about" element={<About mode={Mode}/>} />
+          <Route exact path="/about" element={<About mode={Mode}/>} />
 
-          < Route path="/"
+          < Route exact path="/"  //{use exact path so that it matches exact path
             element={<TextForm heading="Enter your text to modify" example="Enter your text here" mode={Mode} showAlert={showAlert} />} />
         </Routes>
+        </div>
+
+        
 
 
       </BrowserRouter>
